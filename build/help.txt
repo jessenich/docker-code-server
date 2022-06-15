@@ -1,0 +1,45 @@
+Usage: $0 [OPTIONS] [IMAGE-VERSION] -- [Passthru Build Switches]
+
+Script Parameters
+    -h | --help                          - Show this help screen.
+    -v | --verbose                       - Print verbose information to stdout.
+    -f | --version-format                 - Method in which script detects the version to use. Valid options include
+                                                "default": Use latest git tag if image version not already specified. This is the default value.
+                                                "git-tag": Ignore specified image version argument and use latest git tag
+                                                "explicit": Use only the value passed with -i | --image-version. Errors if no value is supplied.
+
+Builder Options
+    -b | --builder-image                 - Name, and tag if not latest, to use with BuildKit
+    -P | --platforms                     - Platform string to pass to buildkit. Defaults to 'linux/amd64,linux/arm64/v8,linux/arm/v7'
+
+DockerHub Login Options
+    -dL | --dockerhub-login-endpoint     - Defaults to null, or docker.io. Only specify in special circumstances.
+    -du | --dockerhub-username           - Username to login to the DockerHub Container Registry. This is not part of the image namespace even though both values may be the same.
+    -dp | --dockerhub-password           - Password to login to the GitHub Container Registry. This can be a password or PAT, though a PAT is recommended.
+    --dockerhub-password-stdin           - Read DockerHub registry password from stdin stream. This can be a password or PAT, though a PAT is recommended.
+
+GitHub Login Options
+    -gL | --ghcr-login-endpoint          - Relative endpoint URI to post login credentials to. This is only required for GitHub Enterprise registries.
+    -gu | --ghcr-username                - Username to login to the GitHub Container Registry.
+    -gp | --ghcr-password                - Password to login to the GitHub Container Registry. This can be a password or PAT, though a PAT is recommended.
+    --ghcr-password-stdin                - Read GitHub Container Registry password from stdin stream. This can be a password or PAT, though a PAT is recommended.
+
+Namespacing Args
+    -dl | --dockerhub-library            - The library segment of the DockerHub images namespace.
+    -dr | --dockerhub-repository         - The repository segment of the DockerHub images namespace.
+    -gl | --ghcr-library                 - The library segment of the GitHub images namespace.
+    -gr | --ghcr-repository              - The repository segment of the GitHub images namespace.
+
+OpenContainer Args
+    -oci | --oci | --oci-label        - Label(s) as described by the OCI in the format of "key=value". Note: Version is automatically added based on the image-version argument.
+                                            If a remote origin can be found and is not explicitly specified, it will be added.
+                                                --opencontainers-label "created=01/01/2021"
+                                                --opencontainers-label "source=https://github.com/user/repository"
+
+Build Args
+    -a | --alpine-version                - Semantic version compliant string that coincides with underlying base Alpine image. See dockerhub.com/alpine for values. 'latest' is considered valid.
+    -u | --username                      - Username to use for non-root default user.
+    --latest                             - Include additional "latest" tag
+
+Passthru Build Options
+    Any arguments supplied following "--" are given to BuildKit as is.

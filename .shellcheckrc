@@ -1,0 +1,55 @@
+# Set default shell environment to bash when no shebang is found.
+shell=bash
+
+# Look for 'source'd files relative to the checked script
+source-path=SCRIPTDIR
+
+# Turn on warnings for unquoted variables with safe values
+enable=quote-safe-variables
+
+# Turn on warnings for unassigned uppercase variables
+enable=check-unassigned-uppercase
+
+# Allow "Literal carriage return. Run script through tr -d '\r'" - git will normalize endings appropriately on next commit.
+disable=SC1017
+
+disable=SC1090
+
+# In POSIX, arrays are undefined
+disable=SC3030
+
+# In POSIX, array references are undefined
+disable=SC3054
+
+# Prefer putting braces around variable references even when not strictly required.
+disable=SC2250
+
+# $VAR_NAME appears unused. Verify use (or export if used externally)
+disable=SC2034
+
+# In POSIX sh, naming functions outside [a-zA-Z_][a-zA-Z0-9_]* is undefined.
+disable=SC3033
+
+# In POSIX sh, [[ ]] is undefined.
+disable=SC3010
+
+# In POSIX sh, echo flags are undefined.
+disable=SC3037
+
+# In POSIX sh, 'local' is undefined.
+disable=SC3043
+
+# In POSIX sh, += is undefined.
+disable=SC3024
+
+# In POSIX sh, 'declare' is undefined.
+disable=SC3044
+
+# In POSIX sh, read -s is undefined.
+disable=SC3045
+
+# In POSIX sh, string replacement is undefined.
+disable=SC3060
+
+# Declare and assign separately to avoid masking return values.
+disable=SC2155
