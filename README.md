@@ -4,40 +4,41 @@
 
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/jessenich/docker-code-server/Push%20Docker%20Image?label=Build%20%26%20Push%20Docker%20Image&style=for-the-badge)
 
-[![Docker Image Version (latest semver)](https://img.shields.io/docker/v/jessenich91/alpine?style=for-the-badge)](https://dockerhub.com/r/jessenich91/alpine) [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/jessenich91/alpine/latest?style=for-the-badge)](https://dockerhub.com/r/jessenich91/alpine) [![Docker Pulls](https://img.shields.io/docker/pulls/jessenich91/alpine?label=DOCKERHUB%20PULLS&style=for-the-badge)](https://dockerhub.com/r/jessenich91/alpine)
+[![Docker Image Version (latest semver)](https://img.shields.io/docker/v/jessenich91/code-server?style=for-the-badge)](https://dockerhub.com/r/jessenich91/code-server) [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/jessenich91/code-server/latest?style=for-the-badge)](https://dockerhub.com/r/jessenich91/code-server) [![Docker Pulls](https://img.shields.io/docker/pulls/jessenich91/code-server?label=DOCKERHUB%20PULLS&style=for-the-badge)](https://dockerhub.com/r/jessenich91/code-server)
 
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-ready--to--code-908a85?logo=gitpod&style=for-the-badge)](https://gitpod.io/#https://github.com/jessenich/docker-code-server)
 
 [__GitHub Source__](https://github.com/jessenich/docker-code-server)
 
-`docker pull jessenich91/alpine:latest`
+Latest Tags:
+`docker pull jessenich91/code-server:latest`
+`docker pull jessenich91/code-server:alpine`
+`docker pull jessenich91/code-server:debian`
+`docker pull jessenich91/code-server:ubuntu`
 
-[__DockerHub Registry__](https://dockerhub.com/r/jessenich91/alpine)
+[__DockerHub Registry__](https://dockerhub.com/r/jessenich91/code-server)
 
-`docker pull ghcr.io/jessenich/alpine:latest`
+Latest Tags:
+`docker pull ghcr.io/jessenich/code-server:latest`
+`docker pull ghcr.io/jessenich/code-server:alpine`
+`docker pull ghcr.io/jessenich/code-server:debian`
+`docker pull ghcr.io/jessenich/code-server:ubuntu`
+
+Version Specific (user/app:semver-compliant-version-tag:
+`docker pull ghcr.io/jessenich/code-server:1.0.0-prerelease1+alpine3.14+codeserver4.4`
+`docker pull ghcr.io/jessenich/code-server:alpine`
+`docker pull ghcr.io/jessenich/code-server:debian`
+`docker pull ghcr.io/jessenich/code-server:ubuntu`
 
 ## What is this image?
 
-Baseline image used in all alpine based images with support for amd64, armhf, and aarch64 architectures.
+Baseline VS Code Server used in all my environment/language specific VSCode Server variants
 
 ### Image Meta
 
-Based off Alpine 14 as of the latest release.
+Based off node/lts-alpine:latest (Docs Updated: 06/15/2022).
 
-Provisions default non root user defaulted to 'sysadm' with no password. Built against both Alpine 3.14 and 3.13 for amd64, aarch64, and armhf architectures.
-
-#### Installed Packages
-
-- ca-certificates
-- rsync
-- nano
-- curl
-- wget
-- tzdata
-- jq
-- yq
-- sudo
-- bash (upon first run)
+Provisions default non root user defaulted to 'coder' with no password. Built against both Alpine 3.14 and 3.13 for amd64, aarch64, and armhf architectures.
 
 ## Running this Image
 
